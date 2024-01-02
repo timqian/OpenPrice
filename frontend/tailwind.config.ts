@@ -7,10 +7,6 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class',
-  // plugins: [require("daisyui")],
-  // daisyui: {
-  //   themes: ["lofi"],
-  // },
   theme: {
     extend: {
       backgroundImage: {
