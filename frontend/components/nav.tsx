@@ -1,0 +1,58 @@
+'use client'
+
+import { useTheme } from 'next-themes';
+
+export function Nav({ className, ...props }: React.ComponentPropsWithoutRef<'nav'>) {
+
+    const { theme, setTheme } = useTheme();
+
+    return (
+        <div className="sticky top-0 z-10 border-b border-zinc-950/10 bg-white px-6 py-5 sm:px-8 lg:z-10 lg:flex lg:h-16 lg:items-center lg:py-0 dark:border-white/10 dark:bg-zinc-900">
+            <div className="mx-auto flex w-full max-w-xl items-center justify-between lg:max-w-7xl">
+                <div className="flex items-center gap-2 sm:gap-4">
+                    <a aria-label="Home" href="/" className='flex items-center justify-center gap-2'>
+                        <svg className="h-[1.375rem] stroke-zinc-900 dark:stroke-zinc-200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" strokeWidth="10" />
+                            <rect x="32.0711" y="49.7487" width="25" height="25" transform="rotate(-45 32.0711 49.7487)" strokeWidth="10" />
+                        </svg>
+                        <svg className='h-[1.1rem] fill-zinc-900 dark:fill-zinc-200' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 277.7096984992392 60">
+                            <g transform="matrix(7.989347293126968,0,0,7.989347293126968,-1.4380794411583508,-19.89347555133424)">
+                                <path d="M1.89 6.47L1.89 6.47L1.89 5.30Q1.89 4.46 2.01 4.14Q2.13 3.82 2.43 3.82Q2.73 3.82 2.86 4.14Q2.99 4.47 2.99 5.14L2.99 5.14L2.99 6.26Q2.99 6.95 2.93 7.29Q2.87 7.63 2.76 7.74Q2.65 7.85 2.43 7.85L2.43 7.85Q2.13 7.85 2.01 7.55Q1.89 7.25 1.89 6.47ZM2.33 8.68L2.33 8.68Q2.90 8.68 3.32 8.56Q3.74 8.43 4.00 8.20Q4.27 7.98 4.43 7.61Q4.59 7.25 4.65 6.84Q4.71 6.42 4.71 5.86L4.71 5.86Q4.71 5.48 4.69 5.18Q4.66 4.89 4.60 4.58Q4.54 4.28 4.44 4.05Q4.34 3.83 4.17 3.63Q4.01 3.43 3.78 3.30Q3.56 3.17 3.25 3.10Q2.94 3.03 2.54 3.03L2.54 3.03Q1.97 3.03 1.56 3.16Q1.14 3.29 0.87 3.52Q0.61 3.75 0.45 4.11Q0.29 4.48 0.24 4.90Q0.18 5.31 0.18 5.87L0.18 5.87Q0.18 6.25 0.20 6.55Q0.22 6.85 0.28 7.15Q0.35 7.45 0.45 7.68Q0.55 7.90 0.71 8.10Q0.88 8.29 1.10 8.42Q1.33 8.54 1.64 8.61Q1.95 8.68 2.33 8.68ZM7.64 8.59L7.64 8.59Q8.03 8.59 8.33 8.43Q8.63 8.26 8.82 7.98Q9.01 7.70 9.11 7.32Q9.21 6.95 9.21 6.51L9.21 6.51Q9.21 5.58 8.85 5.05Q8.48 4.53 7.71 4.53L7.71 4.53Q7.40 4.53 7.16 4.64Q6.92 4.76 6.75 4.93L6.75 4.93L6.75 4.62L5.97 4.62L4.97 4.90L4.97 5.39L5.25 5.57L5.25 10.00L6.75 10.00L6.75 8.39Q6.92 8.47 7.14 8.53Q7.37 8.59 7.64 8.59ZM6.95 7.94L6.95 7.94Q6.91 7.94 6.86 7.93Q6.81 7.93 6.75 7.91L6.75 7.91L6.75 5.45Q6.92 5.36 7.07 5.36L7.07 5.36Q7.29 5.36 7.44 5.56Q7.58 5.77 7.58 6.19L7.58 6.19L7.58 6.98Q7.58 7.94 6.95 7.94ZM11.85 6.17L11.85 6.17L11.14 6.17L11.14 5.78Q11.14 5.61 11.15 5.50Q11.16 5.39 11.20 5.29Q11.25 5.18 11.34 5.14Q11.42 5.09 11.56 5.09L11.56 5.09Q11.73 5.09 11.79 5.33Q11.85 5.58 11.85 6.17ZM11.48 8.68L11.48 8.68Q11.76 8.68 12.06 8.62Q12.37 8.55 12.71 8.37Q13.04 8.18 13.21 7.90L13.21 7.90L12.94 7.42Q12.81 7.55 12.61 7.63Q12.42 7.72 12.23 7.77Q12.04 7.81 11.88 7.81L11.88 7.81Q11.71 7.81 11.59 7.78Q11.48 7.75 11.36 7.67Q11.25 7.58 11.19 7.41Q11.13 7.23 11.13 6.95L11.13 6.95L11.13 6.86L13.27 6.86L13.27 6.35Q13.27 5.39 12.87 4.96Q12.47 4.53 11.55 4.53L11.55 4.53Q10.60 4.53 10.07 5.06Q9.53 5.60 9.53 6.65L9.53 6.65Q9.53 7.08 9.64 7.44Q9.74 7.80 9.96 8.08Q10.18 8.37 10.57 8.53Q10.95 8.68 11.48 8.68ZM13.77 8.59L15.28 8.59L15.28 5.87Q15.29 5.86 15.31 5.84Q15.34 5.81 15.35 5.81Q15.36 5.80 15.39 5.77Q15.41 5.75 15.43 5.74Q15.44 5.74 15.47 5.72Q15.49 5.70 15.51 5.70Q15.53 5.69 15.55 5.68Q15.58 5.67 15.60 5.66Q15.62 5.66 15.64 5.65Q15.67 5.65 15.70 5.65L15.70 5.65Q16.09 5.65 16.07 6.09L16.07 6.09L16.07 8.59L17.61 8.59L17.61 6.22Q17.61 6.19 17.62 6.13L17.62 6.13Q17.62 6.08 17.62 6.05L17.62 6.05Q17.62 5.23 17.35 4.88Q17.09 4.53 16.45 4.53L16.45 4.53Q16.27 4.53 16.08 4.60Q15.89 4.67 15.75 4.77Q15.62 4.87 15.51 4.97Q15.40 5.08 15.34 5.15L15.34 5.15L15.29 5.22L15.29 4.62L14.49 4.62L13.49 4.90L13.49 5.39L13.77 5.57L13.77 8.59ZM18.15 8.59L19.69 8.59L19.69 7.43Q19.70 7.43 19.75 7.43Q19.80 7.44 19.82 7.44Q19.84 7.44 19.89 7.44Q19.95 7.44 19.98 7.45Q20.01 7.45 20.06 7.45Q20.11 7.45 20.15 7.45Q20.19 7.46 20.24 7.46Q20.29 7.46 20.34 7.46L20.34 7.46Q20.70 7.46 21.03 7.29Q21.35 7.13 21.61 6.83Q21.87 6.52 22.02 6.05Q22.17 5.58 22.17 5.00L22.17 5.00Q22.17 4.04 21.70 3.56Q21.24 3.08 20.33 3.08L20.33 3.08Q20.01 3.08 19.51 3.10Q19.01 3.12 18.76 3.12L18.76 3.12L18.15 3.12L18.15 8.59ZM20.64 4.79L20.64 4.79L20.64 5.48Q20.64 5.95 20.44 6.20Q20.23 6.44 19.87 6.44L19.87 6.44L19.69 6.44L19.69 4.02L19.92 4.02Q20.27 4.02 20.45 4.23Q20.64 4.45 20.64 4.79ZM22.58 8.59L24.08 8.59L24.08 6.45Q24.22 6.20 24.70 6.20L24.70 6.20Q25.03 6.20 25.13 6.29L25.13 6.29L25.28 4.63Q25.16 4.59 25.04 4.59L25.04 4.59Q24.01 4.59 23.81 5.73L23.81 5.73L23.68 4.62L23.30 4.62L22.30 4.87L22.30 5.39L22.58 5.57L22.58 8.59ZM25.65 5.57L25.65 8.59L27.15 8.59L27.15 4.62L26.37 4.62L25.37 4.90L25.37 5.39L25.65 5.57ZM25.56 3.42L26.32 4.19L26.50 4.19L27.30 3.42L27.30 3.26L26.50 2.49L26.32 2.49L25.56 3.26L25.56 3.42ZM30.88 8.25L30.92 8.20L30.69 7.56Q30.53 7.69 30.28 7.75Q30.04 7.80 29.81 7.80L29.81 7.80Q29.70 7.80 29.63 7.79Q29.56 7.78 29.45 7.72Q29.34 7.66 29.28 7.55Q29.21 7.44 29.16 7.22Q29.11 7 29.11 6.69L29.11 6.69Q29.11 5.97 29.27 5.68Q29.43 5.39 29.86 5.39L29.86 5.39Q29.92 5.39 29.96 5.39L29.96 5.39L30.23 6.11L30.89 6.10L30.96 5.01Q30.96 5.01 30.86 4.91L30.86 4.91Q30.41 4.52 29.60 4.52L29.60 4.52Q29.18 4.52 28.82 4.67Q28.46 4.82 28.19 5.08Q27.92 5.35 27.77 5.76Q27.61 6.16 27.61 6.66L27.61 6.66Q27.61 7.57 28.11 8.13Q28.62 8.68 29.56 8.68L29.56 8.68Q29.84 8.68 30.09 8.64Q30.33 8.59 30.48 8.51Q30.63 8.44 30.73 8.37Q30.84 8.30 30.88 8.25L30.88 8.25ZM33.52 6.17L33.52 6.17L32.81 6.17L32.81 5.78Q32.81 5.61 32.82 5.50Q32.83 5.39 32.88 5.29Q32.92 5.18 33.01 5.14Q33.10 5.09 33.24 5.09L33.24 5.09Q33.40 5.09 33.46 5.33Q33.52 5.58 33.52 6.17ZM33.15 8.68L33.15 8.68Q33.43 8.68 33.74 8.62Q34.04 8.55 34.38 8.37Q34.71 8.18 34.88 7.90L34.88 7.90L34.61 7.42Q34.48 7.55 34.28 7.63Q34.09 7.72 33.90 7.77Q33.71 7.81 33.55 7.81L33.55 7.81Q33.38 7.81 33.26 7.78Q33.15 7.75 33.04 7.67Q32.92 7.58 32.86 7.41Q32.81 7.23 32.81 6.95L32.81 6.95L32.81 6.86L34.94 6.86L34.94 6.35Q34.94 5.39 34.54 4.96Q34.15 4.53 33.23 4.53L33.23 4.53Q32.27 4.53 31.74 5.06Q31.21 5.60 31.21 6.65L31.21 6.65Q31.21 7.08 31.31 7.44Q31.41 7.80 31.63 8.08Q31.85 8.37 32.24 8.53Q32.62 8.68 33.15 8.68Z">
+                                </path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div className="flex items-center gap-8">
+                    {/* <a className="text-sm/6 font-medium text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" href="/docs">Docs</a> */}
+
+                    <iframe src="https://ghbtns.com/github-btn.html?user=timqian&repo=OpenPrice&type=watch&count=true" width="80" height="20" title="GitHub"></iframe>
+                    {/* <GitHubButton href="https://github.com/timqian/openprice" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-size="medium" data-show-count="true" aria-label="Star timqian/openprice on GitHub">Star</GitHubButton> */}
+
+                    <button type="button" className="inline-flex text-zinc-300 outline-blue-500 hover:text-zinc-400 dark:text-zinc-500 dark:hover:text-zinc-400"
+                        onClick={() => {
+                            console.log('clicked', theme)
+                            setTheme(theme === 'dark' ? 'light' : 'dark')
+                        }
+                        }
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon" className="size-5 dark:hidden"><path fillRule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clipRule="evenodd"></path></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon" className="hidden size-5 text-zinc-300 hover:text-zinc-200 dark:inline"><path fillRule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clipRule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div className="mx-auto mt-5 flex max-w-xl lg:hidden">
+                {/* <span data-slot="control" className="group relative block w-full before:absolute before:inset-px before:rounded-[calc(theme(borderRadius.lg)-1px)] before:bg-white before:shadow dark:before:hidden after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-inset after:ring-transparent sm:after:has-[[data-focus]]:ring-2 sm:after:has-[[data-focus]]:ring-blue-500 has-[[data-disabled]]:opacity-50 before:has-[[data-disabled]]:bg-zinc-950/5 before:has-[[data-disabled]]:shadow-none">
+                    <select className="relative block w-full appearance-none rounded-lg py-[calc(theme(spacing[2.5])-1px)] sm:py-[calc(theme(spacing[1.5])-1px)] pl-[calc(theme(spacing[3.5])-1px)] pr-[calc(theme(spacing.10)-1px)] sm:pl-[calc(theme(spacing.3)-1px)] sm:pr-[calc(theme(spacing.9)-1px)] [&amp;_optgroup]:font-semibold text-base/6 text-zinc-950 placeholder:text-zinc-500 sm:text-sm/6 dark:text-white dark:*:text-white border border-zinc-950/10 data-[hover]:border-zinc-950/20 dark:border-white/10 dark:data-[hover]:border-white/20 bg-transparent dark:bg-white/5 dark:*:bg-zinc-800 focus:outline-none data-[invalid]:border-red-500 data-[invalid]:data-[hover]:border-red-500 data-[invalid]:dark:border-red-600 data-[invalid]:data-[hover]:dark:border-red-600 data-[disabled]:border-zinc-950/20 data-[disabled]:opacity-100 dark:data-[hover]:data-[disabled]:border-white/15 data-[disabled]:dark:border-white/15 data-[disabled]:dark:bg-white/[2.5%]" id="headlessui-select-:R1jfalta:" data-headlessui-state="">
+                        <option value="/docs">Getting started</option>
+                        <optgroup label="Components"><option value="/docs/alert">Alert</option><option value="/docs/avatar">Avatar</option><option value="/docs/badge">Badge</option><option value="/docs/button">Button</option><option value="/docs/checkbox">Checkbox</option><option value="/docs/dialog">Dialog</option><option value="/docs/dropdown">Dropdown</option><option value="/docs/fieldset">Fieldset</option><option value="/docs/input">Input</option><option value="/docs/listbox">Listbox</option><option value="/docs/pagination" selected="">Pagination</option><option value="/docs/radio">Radio button</option><option value="/docs/select">Select</option><option value="/docs/switch">Switch</option><option value="/docs/table">Table</option><option value="/docs/text">Text</option><option value="/docs/textarea">Textarea</option></optgroup>
+                    </select>
+                    <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                        <svg className="size-5 stroke-zinc-500 group-has-[[data-disabled]]:stroke-zinc-600 sm:size-4 dark:stroke-zinc-400 forced-colors:stroke-[CanvasText]" viewBox="0 0 16 16" aria-hidden="true" fill="none"><path d="M5.75 10.75L8 13L10.25 10.75" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10.25 5.25L8 3L5.75 5.25" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </span> */}
+            </div>
+        </div>
+    )
+}

@@ -6,6 +6,11 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
+  // plugins: [require("daisyui")],
+  // daisyui: {
+  //   themes: ["lofi"],
+  // },
   theme: {
     extend: {
       backgroundImage: {
@@ -15,6 +20,5 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
 }
 export default config
